@@ -1,0 +1,16 @@
+name: "Yay internet!"
+output_dir: "."
+navbar:
+  title: "Home"
+  right:
+    - text: "My Resume"
+      href: resume.html
+    - text: "Dashboard"
+      href: dashboard.html
+    - icon: fa-envelope fa-lg
+      href: mailto:<xl3048@cumc.columbia.edu>
+    - icon: fa-github fa-lg
+      href: http://github.com/xylatgit/
+output:
+  html_document:
+    theme: cerulean

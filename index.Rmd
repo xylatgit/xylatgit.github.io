@@ -1,0 +1,34 @@
+---
+title: "My Website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+
+# This is Xiangyi Liu's website
+
+
+## Introduction
+Author: Xiangyi Liu\
+Course: P8105 Data Science\
+Date: Nov.2, 2020
+
+## Useful Links
+
+Link to useful tools for data science:\
+* [My GitHub](http://github.com/xylatgit/)\
+* [My LinkedIn](https://www.linkedin.com/in/xiangyi-liu/)
+
+## My Dog
+This is my dog BB, (picture for cuteness)\
+<img src="images/IMG_6751.jpg" style="width:50%">
+
+
+## Resume
+[My Resume](resume.html)
+
+
+
+
