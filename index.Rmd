@@ -1,5 +1,5 @@
 ---
-title: "My Website"
+title: "Welcome to Xiangyi Liu's website"
 output: 
   html_document:
     toc: true
@@ -7,8 +7,9 @@ output:
     theme: cerulean
 ---
 
-# This is Xiangyi Liu's website
-
+In this website, you can learn more about me via my resume.\
+My GitHub, LinkedIn links are listed below, feel free to learn more about my past experience.
+You could also contact me by clicking the email icon on the navigation bar above.
 
 ## Introduction
 Author: Xiangyi Liu\
@@ -22,7 +23,7 @@ Link to useful tools for data science:\
 * [My LinkedIn](https://www.linkedin.com/in/xiangyi-liu/)
 
 ## My Dog
-This is my dog BB, (picture for cuteness)\
+This is my dog BB (picture for cuteness),\
 <img src="images/IMG_6751.jpg" style="width:50%">
 
 

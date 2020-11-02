@@ -7,6 +7,21 @@ output:
     theme: cerulean
 ---
 ## Academic Experience
+* __University of Rochester__
+  + Rochester, NY
+  + 2016-2020
+  + Bachelor of Science in Data Science
+
+* __Columbia University__ _(in progress)_
+  + NYC, NY
+  + 2020-2022
+  + Master in Biostatistics
+
+## Professional Experience
+* Research Assistant at Dr.Xin Li's Lab
+  + Rochester, NY
+  + February 2019 - May 2020
+  + Research Interest: RNA expression during spermatogenesis
 
 
 
