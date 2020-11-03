@@ -1,5 +1,5 @@
 ---
-title: "Data Exploration"
+title: "Explore the Changes in Korean Restaurant in NYC"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
