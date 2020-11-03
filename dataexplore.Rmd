@@ -1,0 +1,101 @@
+---
+title: "Data Exploration"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    source: embed
+---
+
+```{r setup, include=FALSE}
+library(p8105.datasets)
+library(tidyverse)
+library(plotly)
+
+library(flexdashboard)
+```
+
+```{r data}
+data("rest_inspec")
+
+rest_inspec <-
+  rest_inspec %>%
+  filter(cuisine_description=="Korean")%>%
+  select(boro,grade,critical_flag,cuisine_description,inspection_date,score)
+rest_inspec$score[is.na(rest_inspec$score)]<-0
+rest_inspec <-
+  rest_inspec %>% drop_na()
+```
+
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+```{r line}
+countA<-rest_inspec %>%
+  separate(inspection_date, sep="-", into = c("year","month","day")) %>%
+  select(-month,-day) %>%
+  filter(grade=="A") %>%
+  group_by(year) %>%
+  summarise(n=n())
+  
+total<-rest_inspec %>%
+  separate(inspection_date, sep="-", into = c("year","month","day")) %>%
+  select(-month,-day) %>%
+  group_by(year) %>%
+  summarise(total=n())
+
+countA<-left_join(countA,total,by="year") %>%
+  mutate(percentage = n/total) %>%
+  select(year,percentage)
+
+countA %>%
+  plot_ly(x=~year,y=~percentage,type="scatter",mode="lines") %>%
+  layout(
+    title = "Grade A Percentage for Korean Restaurant Across Years",
+    xaxis = list(title = "Year"),
+    yaxis = list(title = "Grade A %")
+  )
+
+```
+
+
+
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r bar}
+rest_inspec %>%
+  filter(inspection_date>"2017-01-01") %>%
+  group_by(boro) %>%
+  summarise(n=n()) %>%
+  plot_ly(
+    x=~boro,y=~n,type="bar",color = ~boro
+  ) %>%
+  layout(
+    title = "Number of Korean Restaurants in Year 2017",
+    xaxis = list(title = "Block"),
+    yaxis = list(title = "Count")
+  )
+```
+
+### Chart C
+
+```{r box}
+rest_inspec %>%
+  separate(inspection_date, sep="-", into = c("year","month","day")) %>%
+  select(-month,-day) %>%
+  plot_ly(
+    x=~year, y=~score,type="box",color = ~year
+  ) %>%
+  layout(
+    title = "Inspection Scores for Korean Restaurants Across Years",
+    xaxis = list(title = "Year"),
+    yaxis = list(title = "Score")
+  )
+```
+
